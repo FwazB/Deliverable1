@@ -7,50 +7,34 @@ body {
 header {
   background-color: #f2f2f2;
   color: #000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header h1 {
   font-size: 32px;
-  margin: 0;
-  align-items: flex-end;
 }
 
 header ul {
   list-style-type: none;
-  color: #000;
+  padding: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
-}
-
-header ul li {
-  margin: 0 10px;
+  width: 100%;
 }
 
 header ul li a {
   text-decoration: none;
   color: #000;
   font-weight: 400;
+  padding: 10px;
 }
+
 header ul li a:hover {
   color: #ff5c0f;
-}
-
-header button {
-  padding: 12px;
-  background-color: #20a8b4;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: 700;
-}
-
-header button:hover {
-  background-color: #ff5c0f;
 }
 
 button {
@@ -58,41 +42,75 @@ button {
   padding: 12px;
   border-radius: 10px;
   background-color: #20a8b4;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  width: 100%;
+  margin-top: 10px;
 }
+
 button:hover {
   background-color: #ff5c0f;
 }
-img {
-  display: flex;
-  max-width: 50%;
-  height: auto;
-}
+
 .content-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 20px;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .text-content {
-  flex-basis: 50%;
+  text-align: center;
 }
 
 .image-content {
-  flex-basis: 50%;
-  text-align: right;
+  display: none;
 }
 
-.image-content img {
-  max-width: 100%;
-  height: auto;
-}
-@media (max-width: 768px) {
-  .image-content {
-    display: none;
+@media (min-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
-  .text-content {
-    flex-basis: 100%;
+
+  header ul {
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+  }
+
+  header ul li {
+    margin: 0 10px;
+  }
+
+  header button {
+    width: auto;
+    padding: 12px 24px;
+    margin-top: 0;
+  }
+
+  .content-section {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .text-content,
+  .image-content {
+    flex-basis: 50%;
+    text-align: left;
+  }
+
+  .image-content {
+    display: block;
+    max-width: 50%;
+    text-align: right;
+  }
+
+  .image-content img {
+    max-width: 100%;
+    height: auto;
   }
 }
